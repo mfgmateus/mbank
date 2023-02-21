@@ -85,3 +85,17 @@ Response
   {"id":2,"customerId":1,"amount":-10,"balance":40,"dateTime":"2023-02-21T18:01:32.374573"}
 ]
 ```
+
+## Live example
+
+The application was deployed to Heroku and can be reached at https://mbank.herokuapp.com.
+Example calls:
+
+```shell
+curl https://mbank.herokuapp.com/movements/1
+curl -XPOST -H "Content-Type: application/json" https://mbank.herokuapp.com/deposits/1 -d '{"amount": -50}'
+curl -XPOST -H "Content-Type: application/json" https://mbank.herokuapp.com/withdraws/1 -d '{"amount": -10}'
+curl https://mbank.herokuapp.com/movements/1
+curl https://mbank.herokuapp.com/movements/2
+curl -XPOST -H "Content-Type: application/json" https://mbank.herokuapp.com/deposits/2 -d '{"amount": -50}'
+```
